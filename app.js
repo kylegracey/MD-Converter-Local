@@ -1,7 +1,15 @@
 const fs = require('fs');
 const csvjson = require('csvjson');
 
+// Files
+const settings = require('./config/settings.json');
 const pathToInput = './csv/input.csv';
+
+// Modules
+const getSetting = require('./config/get-setting.js')
+  // Pass in the key, returns the proper array of options
+
+console.log(getSetting("Product"));
 
 fs.readFile(pathToInput, 'utf8', parseCB);
 
@@ -20,8 +28,6 @@ function parseCB(err, data) {
     jsonData.forEach(function(obj) {
       // Put keywords into a working array
       let KeywordArr = obj.Keywords.split(', ');
-
-      console.log(KeywordArr);
 
       // Search through keywords for matches and pull them out into their own separate metaproperties
 
