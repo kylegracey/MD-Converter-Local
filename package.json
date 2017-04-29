@@ -4,7 +4,7 @@
   "description": "Refactoring the metadata converter tool with better node knowledge and no servers.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "babel-node app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/kylegracey/MD-Converter-Local/issues"
   },
-  "homepage": "https://github.com/kylegracey/MD-Converter-Local#readme"
+  "homepage": "https://github.com/kylegracey/MD-Converter-Local#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0"
+  }
 }
