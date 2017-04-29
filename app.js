@@ -19,7 +19,9 @@ function parseCB(err, data) {
     // Loop through each object in the jsonData
     jsonData.forEach(function(obj) {
       // Put keywords into a working array
-      let KeywordArr = elm.Keywords.split(', ');
+      let KeywordArr = obj.Keywords.split(', ');
+
+      console.log(KeywordArr);
 
       // Search through keywords for matches and pull them out into their own separate metaproperties
 
