@@ -1,0 +1,19 @@
+{
+  "name": "md-converter-local",
+  "version": "0.0.1",
+  "description": "Refactoring the metadata converter tool with better node knowledge and no servers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylegracey/MD-Converter-Local.git"
+  },
+  "author": "Kyle Gracey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylegracey/MD-Converter-Local/issues"
+  },
+  "homepage": "https://github.com/kylegracey/MD-Converter-Local#readme"
+}
