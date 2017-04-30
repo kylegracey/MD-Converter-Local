@@ -2,19 +2,19 @@ const fs = require('fs');
 const csvjson = require('csvjson');
 
 // Files
-const settings = require('./config/settings.json');
+const allSettings = require('./config/settings.json');
+const settings = allSettings;
 const pathToInput = './csv/input.csv';
 
 // Modules
-const getSetting = require('./config/get-setting.js')
-  // Pass in the key, returns the proper array of options
+const getSettings = require('./modules/get-setting');
+const groupSearch = require('./modules/group-search');
 
 // Setting up some info checks
 let csvStartLength = 0;
 let csvEndLength = 0;
 let jsonStartLength = 0;
-let jsonEndLength = 0
-
+let jsonEndLength = 0;
 
 fs.readFile(pathToInput, 'utf8', parseCB);
 
@@ -38,6 +38,7 @@ function parseCB(err, data) {
       let KeywordArr = obj.Keywords.split(', ');
 
       // Search through keywords for matches and pull them out into their own separate metaproperties
+      const productGroups = groupSearch(obj.Keywords);
 
       // Organize and output metaproperties in the correct order
 
@@ -54,7 +55,7 @@ function parseCB(err, data) {
   console.log("Parse Complete.")
 
   if (csvStartLength - 2 === jsonStartLength) {
-    console.log("CSV to JSON successful with " + jsonStartLength + " files.")
+    console.log("CSV to JSON successful. " + jsonStartLength + " files read.")
   } else {
     console.error("====WARNING====")
     console.error("CSV Started with " + csvStartLength + " lines.")

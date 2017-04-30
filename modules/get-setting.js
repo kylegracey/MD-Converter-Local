@@ -1,4 +1,4 @@
-var settings = require('./settings.json');
+var settings = require('../config/settings.json');
 
 // Gets a specific setting by it's name
 module.exports = function getSetting(key){
