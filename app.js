@@ -9,7 +9,12 @@ const pathToInput = './csv/input.csv';
 const getSetting = require('./config/get-setting.js')
   // Pass in the key, returns the proper array of options
 
-console.log(getSetting("Product"));
+// Setting up some info checks
+let csvStartLength = 0;
+let csvEndLength = 0;
+let jsonStartLength = 0;
+let jsonEndLength = 0
+
 
 fs.readFile(pathToInput, 'utf8', parseCB);
 
@@ -18,10 +23,13 @@ function parseCB(err, data) {
     console.error(err);
   } else {
     //console.log('Data is CSV and length is: ' + data.length);
+    csvStartLength = data.split("\n").length;
+
     const csvjsonOptions = {
       quote : '"'
     };
     let jsonData = csvjson.toObject(data, csvjsonOptions);
+    jsonStartLength = jsonData.length;
     let jsonOutput = [];
 
     // Loop through each object in the jsonData
@@ -42,4 +50,15 @@ function parseCB(err, data) {
     // Write CSV to output file
 
   }
+
+  console.log("Parse Complete.")
+
+  if (csvStartLength - 2 === jsonStartLength) {
+    console.log("CSV to JSON successful with " + jsonStartLength + " files.")
+  } else {
+    console.error("====WARNING====")
+    console.error("CSV Started with " + csvStartLength + " lines.")
+    console.error("JSON Started with " + jsonStartLength + " objects.")
+  }
+
 }
