@@ -32,6 +32,10 @@ function writeCsvFile(data) {
 
 }
 
+function wordSearch(objKeywords) {
+
+}
+
 fs.readFile(pathToInput, 'utf8', parseCB);
 
 function parseCB(err, data) {
@@ -50,16 +54,39 @@ function parseCB(err, data) {
     // Loop through each object in the jsonData
     jsonData.forEach(function(obj) {
       // Put keywords into a working array
-      let KeywordArr = obj.Keywords.split(', ');
+      // let KeywordArr = obj.Keywords.split(', ');
+
+      let newObj = {
+        "Asset Name" : "",
+        "Asset Description" : "",
+        BrandSubbrand : "",
+        Created : "",
+        Copyright : "",
+        Tags : "",
+        "Path to Assets" : "",
+        Archived : "",
+        "New Filename" : "",
+        Group : "",
+        "Client Team" : "",
+        "Product Group" : "",
+        Product : "",
+        Person : "",
+        Gender : "",
+        "Number of People" : "",
+        Year : "",
+        "Platform Rights" : "",
+        Campaign : "",
+        Sport : "",
+        Market : "",
+        "Team Marks" : "",
+        "Asset Status" : ""
+      };
 
       // Search through keywords for matches and pull them out into their own separate metaproperties
-      const productGroups = groupSearch(obj.Keywords);
-
-      // Organize and output metaproperties in the correct order
-      obj["Product Group"] = productGroups;
+      newObj["Product Group"] = groupSearch(obj.Keywords);
 
       // Write new properties to object
-      jsonOutput.push(obj);
+      jsonOutput.push(newObj);
 
     });
 
