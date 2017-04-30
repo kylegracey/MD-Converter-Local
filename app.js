@@ -27,7 +27,7 @@ function writeCsvFile(data) {
   // console.log(csvOutput);
 
   // Write CSV to output file
-  fs.writeFile('output.csv', csvOutput, function (err) {
+  fs.writeFile('./csv/output.csv', csvOutput, function (err) {
     if (err) return console.log(err);
     console.log('Success. Writing to output.csv');
   });
