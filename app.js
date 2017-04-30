@@ -10,6 +10,7 @@ const pathToInput = './csv/input.csv';
 const getSetting = require('./modules/get-setting');
 const groupSearch = require('./modules/group-search');
 const trimExtension = require('./modules/trim-extension');
+const formatDate = require('./modules/format-date');
 
 // Setting up some info checks
 let csvStartLength = 0;
@@ -33,8 +34,10 @@ function writeCsvFile(data) {
 
 }
 
-function wordSearch(objKeywords) {
-
+function wordSearch(obj, newObj) {
+  //Search through keywords for matches in settings and apply them to the proper keys in newObj
+  let keywordArr = obj.Keywords.split(', ');
+  
 }
 
 fs.readFile(pathToInput, 'utf8', parseCB);
@@ -58,23 +61,23 @@ function parseCB(err, data) {
       // let KeywordArr = obj.Keywords.split(', ');
 
       let newObj = {
-        "Asset Name" : "",
-        "Asset Description" : "",
-        BrandSubbrand : "",
-        Created : "",
+        "Asset Name" : trimExtension(obj),
+        "Asset Description" : obj.Description,
+        BrandSubbrand : getSetting("BrandSubBrand"),
+        Created : formatDate(obj),
         Copyright : "",
         Tags : "",
-        "Path to Assets" : "",
-        Archived : "",
-        "New Filename" : "",
-        Group : "",
-        "Client Team" : "",
-        "Product Group" : "",
+        "Path to Assets" : obj.SourceFile,
+        Archived : "0",
+        "New Filename" : obj.FileName,
+        Group : getSetting("Group"),
+        "Client Team" : getSetting("Client Team"),
+        "Product Group" : groupSearch(obj.Keywords),
         Product : "",
         Person : "",
         Gender : "",
         "Number of People" : "",
-        Year : "",
+        Year : obj.CreateDate.substring(0,4),
         "Platform Rights" : "",
         Campaign : "",
         Sport : "",
@@ -84,10 +87,7 @@ function parseCB(err, data) {
       };
 
       // Search through keywords for matches and pull them out into their own separate metaproperties
-      newObj["Asset Name"] = trimExtension(obj)
-      newObj["Product Group"] = groupSearch(obj.Keywords);
-      newObj["Asset Description"] = obj.Description;
-      newObj.BrandSubbrand = getSetting("BrandSubBrand");
+      wordSearch(obj, newObj);
 
       // Write new properties to object
       jsonOutput.push(newObj);
