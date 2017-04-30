@@ -13,8 +13,6 @@ const groupSearch = require('./modules/group-search');
 // Setting up some info checks
 let csvStartLength = 0;
 let csvEndLength = 0;
-let jsonStartLength = 0;
-let jsonEndLength = 0;
 
 function writeCsvFile(data) {
   // Convert jsonOutput back to CSV
@@ -23,13 +21,13 @@ function writeCsvFile(data) {
       delimiter   : ";"
   }
   const csvOutput = csvjson.toCSV(data, jsonToCsvOptions);
-
+  csvEndLength = csvOutput.split("\n").length;
   // console.log(csvOutput);
 
   // Write CSV to output file
   fs.writeFile('./csv/output.csv', csvOutput, function (err) {
     if (err) return console.log(err);
-    console.log('Success. Writing to output.csv');
+    console.log('Writing to csv/output.csv');
   });
 
 }
@@ -47,7 +45,6 @@ function parseCB(err, data) {
       quote : '"'
     };
     let jsonData = csvjson.toObject(data, csvjsonOptions);
-    jsonStartLength = jsonData.length;
     let jsonOutput = [];
 
     // Loop through each object in the jsonData
@@ -70,10 +67,9 @@ function parseCB(err, data) {
 
   }
 
-  console.log("Parse Complete.")
-
-  if (csvStartLength - 2 === jsonStartLength) {
-    console.log("CSV to JSON successful. " + jsonStartLength + " files read.")
+  if (csvStartLength - 1 === csvEndLength) {
+    const fileNum = csvEndLength - 1;
+    console.log("Success. Metadata reformatted on " + fileNum + " files.")
   } else {
     console.error("====WARNING====")
     console.error("CSV Started with " + csvStartLength + " lines.")
