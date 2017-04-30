@@ -16,6 +16,24 @@ let csvEndLength = 0;
 let jsonStartLength = 0;
 let jsonEndLength = 0;
 
+function writeCsvFile(data) {
+  // Convert jsonOutput back to CSV
+  const jsonToCsvOptions = {
+      headers   : "key",
+      delimiter   : ";"
+  }
+  const csvOutput = csvjson.toCSV(data, jsonToCsvOptions);
+
+  // console.log(csvOutput);
+
+  // Write CSV to output file
+  fs.writeFile('output.csv', csvOutput, function (err) {
+    if (err) return console.log(err);
+    console.log('Success. Writing to output.csv');
+  });
+
+}
+
 fs.readFile(pathToInput, 'utf8', parseCB);
 
 function parseCB(err, data) {
@@ -41,14 +59,14 @@ function parseCB(err, data) {
       const productGroups = groupSearch(obj.Keywords);
 
       // Organize and output metaproperties in the correct order
+      obj["Product Group"] = productGroups;
 
-      // Push object into output array
+      // Write new properties to object
+      jsonOutput.push(obj);
 
     });
 
-    // Convert jsonOutput back to CSV
-
-    // Write CSV to output file
+    writeCsvFile(jsonOutput);
 
   }
 
