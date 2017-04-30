@@ -7,7 +7,7 @@ const settings = allSettings;
 const pathToInput = './csv/input.csv';
 
 // Modules
-const getSettings = require('./modules/get-setting');
+const getSetting = require('./modules/get-setting');
 const groupSearch = require('./modules/group-search');
 const trimExtension = require('./modules/trim-extension');
 
@@ -86,6 +86,8 @@ function parseCB(err, data) {
       // Search through keywords for matches and pull them out into their own separate metaproperties
       newObj["Asset Name"] = trimExtension(obj)
       newObj["Product Group"] = groupSearch(obj.Keywords);
+      newObj["Asset Description"] = obj.Description;
+      newObj.BrandSubbrand = getSetting("BrandSubBrand");
 
       // Write new properties to object
       jsonOutput.push(newObj);
