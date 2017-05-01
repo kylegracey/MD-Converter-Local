@@ -9,6 +9,7 @@ const pathToInput = './csv/input.csv';
 // Modules
 const getSetting = require('./modules/get-setting');
 const groupSearch = require('./modules/group-search');
+const wordSearch = require('./modules/word-search');
 const trimExtension = require('./modules/trim-extension');
 const formatDate = require('./modules/format-date');
 
@@ -33,25 +34,6 @@ function writeCsvFile(data) {
   });
 
 }
-
-// function wordSearch(key, obj, newObj) {
-//   let keywordArr = obj.Keywords.split(', ');
-//   let categoryHolder = [];
-//   let categoryTerms = getSetting(key);
-//
-//   categoryTerms.forEach(function(keyword){
-//     var hasKeyword = obj.Keywords.search(keyword);
-//     if (hasKeyword !== -1){
-//       categoryHolder.push(keyword);
-//       //Now remove from keywordArr
-//       const keyIndex = keywordArr.indexOf(keyword);
-//       keywordArr.splice(keyIndex, 1);
-//     };
-//   });
-//
-//   newObj[key] = categoryHolder.join(',');
-//
-// }
 
 fs.readFile(pathToInput, 'utf8', parseCB);
 
@@ -79,7 +61,7 @@ function parseCB(err, data) {
         BrandSubbrand : getSetting("BrandSubBrand"),
         Created : formatDate(obj),
         Copyright : "",
-        Tags : "",
+        "Tags" : "",
         "Path to Assets" : obj.SourceFile,
         Archived : "0",
         "New Filename" : obj.FileName,
@@ -100,7 +82,7 @@ function parseCB(err, data) {
       };
 
       // Search through keywords for matches and pull them out into their own separate metaproperties
-      // wordSearch("Product", obj, newObj);
+      wordSearch(obj, newObj);
 
       // Write new properties to object
       jsonOutput.push(newObj);

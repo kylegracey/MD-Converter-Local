@@ -1,22 +1,22 @@
-const settings = require('./config/settings.json');
-const getSetting = require('./modules/get-setting');
+const settings = require('../config/settings.json');
+const getSetting = require('./get-setting');
 
 const keywordCats = getSetting("KeywordCats");
 
-const objInput = {
-  name: "tempObj",
-  keywords: "GTQ - Frost, JJ Watt, Recover Bar, Individual Product, Male, Efficacy, Football, One, Practice"
-};
-
-let objOutput = {
-  name: "Output Object"
-};
+// const objInput = {
+//   name: "tempObj",
+//   keywords: "GTQ - Frost, JJ Watt, Recover Bar, Individual Product, Male, Efficacy, Football, One, Practice"
+// };
+//
+// let objOutput = {
+//   name: "Output Object"
+// };
 
 // Gets a specific setting by it's name
-(function(){
+module.exports = function wordSearch(objInput, objOutput){
 
   let newObjTags = [];
-  let objKeywords = objInput.keywords.split(", ");
+  let objKeywords = objInput.Keywords.split(", ");
 
   for (let key in keywordCats) {
     const catName = key;
@@ -36,6 +36,5 @@ let objOutput = {
     });
     objOutput[catName] = catArrOutput.join(',');
   }
-  objOutput.Tags = objKeywords;
-  console.log(objOutput);
-})();
+  objOutput["Tags"] = objKeywords.join(',');
+};
