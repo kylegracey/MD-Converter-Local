@@ -8,8 +8,11 @@
 // }
 
 const fs = require('fs');
-const pathToKeyStructure = '../bridge/gatorade.txt';
+const pathToKeyStructure = './bridge/gatorade.txt';
 
 fs.readFile(pathToKeyStructure, 'utf8', function(err, data){
   //Do stuff
+  const dataArr = data.split("\n");
+
+  console.log(dataArr);
 });
