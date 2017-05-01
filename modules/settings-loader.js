@@ -6,3 +6,10 @@
 //     "Person" : ["Person 1, Person 2, Person 3"]
 //   }
 // }
+
+const fs = require('fs');
+const pathToKeyStructure = '../bridge/gatorade.txt';
+
+fs.readFile(pathToKeyStructure, 'utf8', function(err, data){
+  //Do stuff
+});
