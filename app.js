@@ -34,10 +34,23 @@ function writeCsvFile(data) {
 
 }
 
-function wordSearch(obj, newObj) {
-  //Search through keywords for matches in settings and apply them to the proper keys in newObj
+function wordSearch(key, obj, newObj) {
   let keywordArr = obj.Keywords.split(', ');
-  
+  let categoryHolder = [];
+  let categoryTerms = getSetting(key);
+
+  categoryTerms.forEach(function(keyword){
+    var hasKeyword = obj.Keywords.search(keyword);
+    if (hasKeyword !== -1){
+      categoryHolder.push(keyword);
+      //Now remove from keywordArr
+      const keyIndex = keywordArr.indexOf(keyword);
+      keywordArr.splice(keyIndex, 1);
+    };
+  });
+
+  newObj[key] = categoryHolder.join(',');
+
 }
 
 fs.readFile(pathToInput, 'utf8', parseCB);
@@ -87,7 +100,7 @@ function parseCB(err, data) {
       };
 
       // Search through keywords for matches and pull them out into their own separate metaproperties
-      wordSearch(obj, newObj);
+      wordSearch("Product", obj, newObj);
 
       // Write new properties to object
       jsonOutput.push(newObj);
