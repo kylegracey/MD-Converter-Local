@@ -3,16 +3,20 @@ const getSetting = require('./modules/get-setting');
 
 const keywordCats = getSetting("KeywordCats");
 
-const tempObj = {
+const objInput = {
   name: "tempObj",
   keywords: "GTQ - Frost, JJ Watt, Recover Bar, Individual Product, Male, Efficacy, Football, One, Practice"
+};
+
+let objOutput = {
+  name: "Output Object"
 };
 
 // Gets a specific setting by it's name
 (function(){
 
   let newObjTags = [];
-  let objKeywords = tempObj.keywords.split(", ");
+  let objKeywords = objInput.keywords.split(", ");
 
   for (let key in keywordCats) {
     const catName = key;
@@ -30,8 +34,8 @@ const tempObj = {
       };
 
     });
-
-    console.log("Category: " + catName + " | Keywords: " + catArrOutput);
+    objOutput[catName] = catArrOutput.join(',');
   }
-  console.log("Tags: " + objKeywords);
+  objOutput.Tags = objKeywords;
+  console.log(objOutput);
 })();
