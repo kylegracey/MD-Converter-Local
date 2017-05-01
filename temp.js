@@ -11,10 +11,12 @@ const tempObj = {
 // Gets a specific setting by it's name
 (function(){
 
+  let newObjTags = [];
+  let objKeywords = tempObj.keywords.split(", ");
+
   for (let key in keywordCats) {
     const catName = key;
     const catSettingArr = keywordCats[key];
-    const objKeywords = tempObj.keywords.split(", ");
     let catArrOutput = [];
 
     catSettingArr.forEach(function(keyword){
@@ -23,6 +25,7 @@ const tempObj = {
         if (keyword === objKeywords[objKey]) {
           //Found an exact match!
           catArrOutput.push(objKeywords[objKey]);
+          objKeywords.splice(objKey, 1);
         }
       };
 
@@ -30,5 +33,5 @@ const tempObj = {
 
     console.log("Category: " + catName + " | Keywords: " + catArrOutput);
   }
-
+  console.log("Tags: " + objKeywords);
 })();
