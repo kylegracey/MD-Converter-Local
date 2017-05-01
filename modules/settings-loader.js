@@ -9,6 +9,7 @@
 
 const fs = require('fs');
 const pathToKeyStructure = './bridge/gatorade.txt';
+const catExclusions = ["Tags", "Teams", "Product Group (Manual Trigger)"];
 
 module.exports = function getCategories(settingObj, callback){
   fs.readFile(pathToKeyStructure, 'utf8', function(err, data){
@@ -26,6 +27,9 @@ module.exports = function getCategories(settingObj, callback){
       else if (str.substring(0,1) == '\t' && str.substring(1,2) !== '\t') {
         categoryObj[catHolder].push(str.substring(1));
       }
+    });
+    catExclusions.forEach(function(exclusion){
+      delete categoryObj[exclusion];
     });
     settingObj.KeywordCats = categoryObj;
     callback(settingObj);
