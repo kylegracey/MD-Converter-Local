@@ -19,7 +19,7 @@ module.exports = function wordSearch(objInput, objOutput){
   let objKeywords = objInput.Keywords.split(", ");
 
   for (let key in keywordCats) {
-    const catName = key;
+    const catName = key.toLowerCase().replace(/\s/g, '');
     const catSettingArr = keywordCats[key];
     let catArrOutput = [];
 
