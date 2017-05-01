@@ -1,7 +1,4 @@
-const settings = require('../config/settings.json');
-const getSetting = require('./get-setting');
-
-const keywordCats = getSetting("KeywordCats");
+// const KeywordCats = getSetting("KeywordCats");
 
 // const objInput = {
 //   name: "tempObj",
@@ -13,14 +10,14 @@ const keywordCats = getSetting("KeywordCats");
 // };
 
 // Gets a specific setting by it's name
-module.exports = function wordSearch(objInput, objOutput){
+module.exports = function wordSearch(objInput, objOutput, KeywordCats){
 
   let newObjTags = [];
   let objKeywords = objInput.Keywords.split(", ");
 
-  for (let key in keywordCats) {
+  for (let key in KeywordCats) {
     const catName = key.toLowerCase().replace(/\s/g, '');
-    const catSettingArr = keywordCats[key];
+    const catSettingArr = KeywordCats[key];
     let catArrOutput = [];
 
     catSettingArr.forEach(function(keyword){
