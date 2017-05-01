@@ -1,3 +1,6 @@
+// Built to work with exiftool settings:
+// exiftool -csv -FileName -CreateDate -Description -Keywords -r -ext jpg DIRECTORY > testdataexport4.csv
+
 const fs = require('fs');
 const csvjson = require('csvjson');
 
@@ -65,20 +68,28 @@ function parseCB(err, data) {
         "Path to Assets" : obj.SourceFile,
         Archived : "0",
         "New Filename" : obj.FileName,
-        Group : getSetting("Group"),
-        "Client Team" : getSetting("Client Team"),
-        "Product Group" : groupSearch(obj.Keywords),
-        Product : "",
-        Person : "",
-        Gender : "",
-        "Number of People" : "",
-        Year : obj.CreateDate.substring(0,4),
-        "Platform Rights" : "",
-        Campaign : "",
-        Sport : "",
-        Market : "",
-        "Team Marks" : "",
-        "Asset Status" : ""
+        fileextension: "",
+        group : getSetting("Group"),
+        clientteam : getSetting("Client Team"),
+        assettype : "",
+        assetsubtype : "",
+        year : obj.CreateDate.substring(0,4),
+        campaign : "",
+        productgroup : groupSearch(obj.Keywords),
+        product : "",
+        productsize : "",
+        productsubtype : "",
+        productgender : "",
+        numberofpeople : "",
+        person : "",
+        teammarks : "",
+        gender : "",
+        shottype : "",
+        sport : "",
+        assetstatus : "",
+        market : "",
+        platformrights : "",
+        jobid : ""
       };
 
       // Search through keywords for matches and pull them out into their own separate metaproperties
