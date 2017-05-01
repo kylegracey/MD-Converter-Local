@@ -4,7 +4,8 @@
   "description": "Refactoring the metadata converter tool with better node knowledge and no servers.",
   "main": "app.js",
   "scripts": {
-    "dev": "babel-node app.js"
+    "dev": "babel-node app.js",
+    "test": "babel-node temp.js"
   },
   "repository": {
     "type": "git",
