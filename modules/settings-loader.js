@@ -17,6 +17,8 @@ module.exports = function getCategories(settingObj, callback){
     const dataArr = data.split("\n");
     let categoryObj = {};
     let catHolder = "";
+    let thirdLevelCat = [];
+    const thirdLevelCatName = "Product Size";
 
     dataArr.forEach(function(str) {
       if (str && str.substring(0, 1) !== '\t' && str.charAt(0) !== '[') {
@@ -27,11 +29,27 @@ module.exports = function getCategories(settingObj, callback){
       else if (str.substring(0,1) == '\t' && str.substring(1,2) !== '\t') {
         categoryObj[catHolder].push(str.substring(1));
       }
+      else if (str.charAt(0) !== '[' && str.length > 1) {
+        //Check if string already exists in thirdLevelCat
+        let hasTerm = false;
+        thirdLevelCat.forEach(function(term){
+          if (term === str.substring(2)) {
+            hasTerm = true;
+          }
+        });
+
+        if (hasTerm == false){
+          thirdLevelCat.push(str.substring(2));
+        }
+
+      }
     });
     catExclusions.forEach(function(exclusion){
       delete categoryObj[exclusion];
     });
+    categoryObj[thirdLevelCatName] = thirdLevelCat;
     settingObj.KeywordCats = categoryObj;
+
     callback(settingObj);
   });
 }

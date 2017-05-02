@@ -151,9 +151,8 @@ Product
 		51oz
 		76.5oz
 		Individual Packet
-	Gx
-		Gx Bottle
-		Gx Pods
+	Gx Bottle
+	Gx Pods
 	Organic
 	Post-Game Protein
 	Prime Pouch
