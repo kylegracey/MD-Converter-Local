@@ -17,11 +17,14 @@ module.exports = function wordSearch(objInput, objOutput, KeywordCats){
 
   // List of Keywords to Re-map
   const altKeywords = {
-    "Blender Bottle" : ["Shaker Bottle"]
+    "Product" : {
+      "Blender Bottle" : ["Shaker Bottle", "Rec Bottle"],
+      "Whey Protein Bar" : ["Recover Bar"]
+    }
   };
 
   for (let key in KeywordCats) {
-    const catName = key.toLowerCase().replace(/\s/g, '');
+    let catName = key.toLowerCase().replace(/\s/g, '');
     const catSettingArr = KeywordCats[key];
     let catArrOutput = [];
 
@@ -30,30 +33,40 @@ module.exports = function wordSearch(objInput, objOutput, KeywordCats){
       for (let objKey in objKeywords){
         if (keyword === objKeywords[objKey]) {
           //Found an exact match!
-          // console.log('Found exact match for ' + catName + ' with ' + objKeywords[objKey]);
+          // console.log("In if statement. catName = " + catName);
           catArrOutput.push(objKeywords[objKey]);
           objKeywords.splice(objKey, 1);
-          break;
-        } else {
-          // Check alt keywords
-          // console.log("Didn't find match for " + catName + ' with ' + objKeywords[objKey])
-          for (let alts in altKeywords) {
-            const altKey = alts;
-            for (let altKeyword in altKeywords[alts]) {
-              const list = altKeywords[alts]
-              if (objKeywords[objKey] === list[altKeyword]) {
-                // catArrOutput.push(objKeywords[objKey]);
-                // objKeywords.splice(objKey, 1);
-              }
-            }
-            // console.log('Now looking for alt keywords for ' + alts);
-            // console.log('Trying to match ' + altKeywords[alts] + " and " + keyword);
-
-          }
         }
       };
-
     });
+
+    for (let objKey in objKeywords) {
+      // For each leftover keyword
+      for (let cats in altKeywords) {
+        const altCatName = cats.toLowerCase().replace(/\s/g, '');
+
+        // Loop through each alt category only IF it matches category name
+        if (catName === altCatName) {
+          let catObject = altKeywords[cats];
+          for (let catKey in catObject) {
+            catObject[catKey].forEach(function(oldTerm){
+
+              if (objKeywords[objKey] === oldTerm) {
+                // console.log("found match between " + objKeywords[objKey] + " and " + oldTerm + " in " + catName);
+                catArrOutput.push(catKey);
+                objKeywords.splice(objKey, 1);
+
+              }
+
+            });
+          }
+
+        }
+
+      }
+
+    }
+
     objOutput[catName] = catArrOutput.join(',');
   }
   objOutput["Tags"] = objKeywords.join(',');
