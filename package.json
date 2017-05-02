@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "babel-node app.js",
     "settings-loader": "babel-node modules/settings-loader.js",
-    "test": "babel-node temp.js"
+    "test": "babel-node temp.js",
+    "evaluate": "babel-node modules/evaluator.js"
   },
   "repository": {
     "type": "git",
