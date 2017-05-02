@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "babel-node app.js",
+    "settings-loader": "babel-node modules/settings-loader.js",
     "test": "babel-node temp.js"
   },
   "repository": {

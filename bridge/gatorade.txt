@@ -1,0 +1,272 @@
+﻿Asset Expired
+Asset Quality
+	Production
+	Raw
+	Retouched
+Asset Subtype
+	Backgrounds
+	Color Palette
+	Icons
+	Layouts
+	Logos
+	Original
+	Releases
+	Stock
+Asset Type
+	Documents
+	Fonts
+	Graphics
+	Photography
+	Presentations
+	Product Renders
+	Production Files
+	Video
+Athlete
+	Bryce Harper
+	Cam Newton
+	Coach
+	D'Angelo Russell
+	Dwyane Wade
+	Elena Delle Donne
+	Eli Manning
+	Jimmie Johnson
+	JJ Watt
+	Joe
+	Karl-Anthony Towns
+	Paul George
+	Peyton Manning
+	RGIII
+	Serena Williams
+	Todd Gurley
+	Trainer
+	Usain Bolt
+Campaign
+	Be Like Mike
+	Beat the Heat
+	eComm
+	Every Ounce Counts
+	Flow
+	G Organic
+	Gatorade Brand
+	GSSI
+	Gx
+	League of Captains
+	Social
+	Sweat with the Best
+	Volume Driving
+	Win From Within
+Gender
+	Female
+	Male
+League
+	NBA
+Location
+	Barrington, IL (GSSI)
+	Bradenton, FL (GSSI)
+	Bradenton, FL (IMG Academy)
+	Chicago, IL
+	Los Angeles, CA (Venice Beach)
+Market
+	Australia
+	EMEA
+	France
+	Germany
+	International
+	North America
+	USA
+Marks
+	Game
+	Practice
+Number of People
+	Group of People (3+)
+	None
+	One
+	Two
+Platform Rights
+	Broadcast
+	Digital
+	Print
+	Social
+	Unlimited
+Product
+	Blender Bottle
+	Carb Energy Chews
+	Carb Energy Drink
+	Coolers
+		1 Gallon
+		3 Gallon
+		7 Gallon
+		64oz
+		Ice Chest
+	Cups
+	Endurance Formula
+		24oz
+	Energy Chews
+		5-Pack
+		Chews
+		Individual Packet
+	Fuel Bar
+	G2
+		12oz
+		16.9oz
+		20oz
+		28oz
+		32oz
+	Gatorlytes
+	GTQ
+		12oz
+		16.9oz
+		20oz
+		24oz
+		28oz
+		32oz
+		64oz
+		128oz
+	GTQ - Fierce
+		12oz
+		16.9oz
+		20oz
+		24oz
+		28oz
+		32oz
+	GTQ - Flow
+		28oz
+		32oz
+	GTQ - Frost
+		12oz
+		20oz
+		24oz
+		28oz
+		32oz
+		64oz
+		128oz
+	GTQ - Nuestro Sabor
+		20oz
+		28oz
+		32oz
+	GTQ - Powder
+		8-Pack
+		18.3oz
+		21oz
+		51oz
+		76.5oz
+		Individual Packet
+	Gx
+		Gx Bottle
+		Gx Pods
+	Organic
+	Post-Game Protein
+	Prime Pouch
+	Protein Powder
+		22.4oz
+		Individual Packet
+	Protein Shake
+	Soccer Formula
+	Sports Fuel Drink
+	Sports Re-fuel Drink
+	Squeeze Bottles
+	Tent
+	Towel
+	Whey Protein Bar
+Product Group (Manual Trigger)
+	Heritage
+	Sports Fuel Innovation
+Shot Type
+	3/4 View
+	Action
+	Active
+	Architecture
+	Back
+	Bottom
+	Consumption
+	Family
+	Front
+	Group
+	Head to Toe
+	Individual Product
+	Lifestyle
+	Medium Shot
+	Outlines
+	Pack Shot
+	Portrait
+	Product
+	Product Close Up
+	Side
+	Studio
+	Sweep
+	Top
+	Wide Shot
+Sport
+	Baseball
+	Basketball
+	Cross Country
+	Football
+	Hockey
+	Lacrosse
+	NASCAR
+	Soccer
+	Tennis
+	Track
+	Workout
+Tags
+	Backgrounds
+	Batting Cage
+	Best Of
+	Bleachers
+	Bod Pod
+	Bulls
+	Details
+	DXA
+	DynaVision
+	Environmental Chamber
+	FitLight
+	Isokinetic Chair
+	Lakers
+	Locker Room
+	Metabolic Table
+	Pacers
+	Parachute
+	Perform
+	Prime
+	Prototype
+	Recover
+	Science Lab
+	Sidelines
+	Stadium Lights
+	Stationary Bike
+	Surreal
+	Sweat Patch
+	Texans
+	Texture
+	Treadmill
+Teams
+	Atlanta Hawks
+	Boston Celtics
+	Brooklyn Nets
+	Charlotte Hornets
+	Cleveland Cavaliers
+	Dallas Mavericks
+	Denver Nuggets
+	Detroit Pistons
+	Houston Rockets
+	LA Clippers
+	Memphis Grizzlies
+	Milwaukee Bucks
+	Minnesota Timberwolves
+	New Orleans Pelicans
+	Oklahoma City Thunder
+	Orlando Magic
+	Philadelphia 76ers
+	Phoenix Suns
+	Portland Trailblazers
+	Sacramento Kings
+	San Antonio Spurs
+	Toronto Raptors
+	Utah Jazz
+	Washington Wizards
+Year
+	2014
+	2015
+	2016
+	2017
+[Other Keywords]

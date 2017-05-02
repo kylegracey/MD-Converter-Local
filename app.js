@@ -5,12 +5,12 @@ const fs = require('fs');
 const csvjson = require('csvjson');
 
 // Files
-const allSettings = require('./config/settings.json');
-const settings = allSettings;
+let settings = require('./config/settings.json');
 const pathToInput = './csv/input.csv';
 
 // Modules
 const getSetting = require('./modules/get-setting');
+const getCategories = require('./modules/settings-loader');
 const groupSearch = require('./modules/group-search');
 const wordSearch = require('./modules/word-search');
 const trimExtension = require('./modules/trim-extension');
@@ -19,6 +19,10 @@ const formatDate = require('./modules/format-date');
 // Setting up some info checks
 let csvStartLength = 0;
 let csvEndLength = 0;
+
+const logIt = function(){
+  console.log(settings[0].KeywordCats);
+}
 
 function writeCsvFile(data) {
   // Convert jsonOutput back to CSV
@@ -38,79 +42,88 @@ function writeCsvFile(data) {
 
 }
 
-fs.readFile(pathToInput, 'utf8', parseCB);
+const parseMetadata = function(){
 
-function parseCB(err, data) {
-  if (err) {
-    console.error(err);
-  } else {
-    //console.log('Data is CSV and length is: ' + data.length);
-    csvStartLength = data.split("\n").length;
+  console.log('Inside parseMetadata');
+  console.log('Settings are currently: ' + settings)
 
-    const csvjsonOptions = {
-      quote : '"'
-    };
-    let jsonData = csvjson.toObject(data, csvjsonOptions);
-    let jsonOutput = [];
+  fs.readFile(pathToInput, 'utf8', parseCB);
 
-    // Loop through each object in the jsonData
-    jsonData.forEach(function(obj) {
-      // Put keywords into a working array
-      // let KeywordArr = obj.Keywords.split(', ');
+  function parseCB(err, data) {
+    if (err) {
+      console.error(err);
+    } else {
+      //console.log('Data is CSV and length is: ' + data.length);
+      csvStartLength = data.split("\n").length;
 
-      let newObj = {
-        "Asset Name" : trimExtension(obj),
-        "Asset Description" : obj.Description,
-        BrandSubbrand : getSetting("BrandSubBrand"),
-        Created : formatDate(obj),
-        Copyright : "",
-        "Tags" : "",
-        "Path to Assets" : obj.SourceFile,
-        Archived : "0",
-        "New Filename" : obj.FileName,
-        fileextension: "",
-        group : getSetting("Group"),
-        clientteam : getSetting("Client Team"),
-        assettype : "",
-        assetsubtype : "",
-        year : obj.CreateDate.substring(0,4),
-        campaign : "",
-        productgroup : groupSearch(obj.Keywords),
-        product : "",
-        productsize : "",
-        productsubtype : "",
-        productgender : "",
-        numberofpeople : "",
-        person : "",
-        teammarks : "",
-        gender : "",
-        shottype : "",
-        sport : "",
-        assetstatus : "",
-        market : "",
-        platformrights : "",
-        jobid : ""
+      const csvjsonOptions = {
+        quote : '"'
       };
+      let jsonData = csvjson.toObject(data, csvjsonOptions);
+      let jsonOutput = [];
 
-      // Search through keywords for matches and pull them out into their own separate metaproperties
-      wordSearch(obj, newObj);
+      // Loop through each object in the jsonData
+      jsonData.forEach(function(obj) {
+        // Put keywords into a working array
+        // let KeywordArr = obj.Keywords.split(', ');
 
-      // Write new properties to object
-      jsonOutput.push(newObj);
+        let newObj = {
+          "Asset Name" : trimExtension(obj),
+          "Asset Description" : obj.Description,
+          BrandSubbrand : getSetting("BrandSubBrand"),
+          Created : formatDate(obj),
+          Copyright : "",
+          "Tags" : "",
+          "Path to Assets" : obj.SourceFile,
+          Archived : "0",
+          "New Filename" : obj.FileName,
+          fileextension: "",
+          group : getSetting("Group"),
+          clientteam : getSetting("Client Team"),
+          assettype : "",
+          assetsubtype : "",
+          year : obj.CreateDate.substring(0,4),
+          campaign : "",
+          productgroup : groupSearch(obj.Keywords),
+          product : "",
+          productsize : "",
+          productsubtype : "",
+          productgender : "",
+          numberofpeople : "",
+          person : "",
+          teammarks : "",
+          gender : "",
+          shottype : "",
+          sport : "",
+          assetstatus : "",
+          market : "",
+          platformrights : "",
+          jobid : ""
+        };
 
-    });
+        // Search through keywords for matches and pull them out into their own separate metaproperties
+        wordSearch(obj, newObj, settings[0].KeywordCats);
 
-    writeCsvFile(jsonOutput);
+        // Write new properties to object
+        jsonOutput.push(newObj);
+
+      });
+
+      writeCsvFile(jsonOutput);
+
+    }
+
+    if (csvStartLength - 1 === csvEndLength) {
+      const fileNum = csvEndLength - 1;
+      console.log("Success. Metadata reformatted on " + fileNum + " files.")
+    } else {
+      console.error("====WARNING====")
+      console.error("CSV Started with " + csvStartLength + " lines.")
+      console.error("JSON Started with " + jsonStartLength + " objects.")
+    }
 
   }
-
-  if (csvStartLength - 1 === csvEndLength) {
-    const fileNum = csvEndLength - 1;
-    console.log("Success. Metadata reformatted on " + fileNum + " files.")
-  } else {
-    console.error("====WARNING====")
-    console.error("CSV Started with " + csvStartLength + " lines.")
-    console.error("JSON Started with " + jsonStartLength + " objects.")
-  }
-
 }
+console.log("Start");
+console.log("Settings are currently: " + settings[0].KeywordCats);
+getCategories(settings[0], parseMetadata);
