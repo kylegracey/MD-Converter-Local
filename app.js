@@ -20,10 +20,6 @@ const formatDate = require('./modules/format-date');
 let csvStartLength = 0;
 let csvEndLength = 0;
 
-const logIt = function(){
-  console.log(settings[0].KeywordCats);
-}
-
 function writeCsvFile(data) {
   // Convert jsonOutput back to CSV
   const jsonToCsvOptions = {
@@ -43,9 +39,6 @@ function writeCsvFile(data) {
 }
 
 const parseMetadata = function(){
-
-  console.log('Inside parseMetadata');
-  console.log('Settings are currently: ' + settings)
 
   fs.readFile(pathToInput, 'utf8', parseCB);
 
@@ -124,6 +117,5 @@ const parseMetadata = function(){
 
   }
 }
-console.log("Start");
-console.log("Settings are currently: " + settings[0].KeywordCats);
+console.log("Starting...");
 getCategories(settings[0], parseMetadata);
