@@ -10,9 +10,20 @@ const pathToVerify = './config/taxonomy.csv';
 
 // Load and parse verification CSV
 const loadVerify = function(path, callback) {
-  console.log("loadVerify Ran");
 
-  callback()
+  function parseCSV(err, data) {
+    if (err) {
+      console.error(err);
+    } else {
+      //Convert to json once, then work from there.
+      console.log(data);
+
+    }
+    callback()
+  }
+
+  fs.readFile(path, 'utf8', parseCSV);
+
 }
 
 function printReport(jsonInput) {

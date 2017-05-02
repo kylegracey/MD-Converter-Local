@@ -1,0 +1,43 @@
+Group
+	PepsiCo	Tyson	New York	Kalamazoo	VML Agency
+Client Team
+	Gatorade	Propel	Tyson Consumer	Jimmy Dean	Hillshire	New Balance	Stryker	VML Assets
+Asset Type
+	Photography	Video	Graphics 	Fonts 	Presentations	Documents	Production Files	Product Renders
+Asset Subtype
+	Original	Stock	Product	Logos	Layouts	Icons	Backgrounds & Textures	Releases	Print Ad	OLM	Email	Facebook
+File Extension
+	jpg	psd	cr2	png	tiff	mp4	mov	eps	ai	psd	ase	svg	otf	ttf	key	pdf	ppt	pptx	zip
+Product Group
+	GTQ	Bars	Prime	Perform	Recover	JEMS	EMS World	Beds	Surfaces	Clinical Seating	Furniture	Maternity	Michael Graves	Disposables	Wireless Solutuions	Marnity Suite	SofCare HeelCare Boot Series	SofCare Chair Cushion Series	Transport	Temperature Management	Surfaces	Powered System	Hybrid System	Manual System	Manual Fasteners	Manual Cots	Evacuation Equipment	Ambulance Cots	Cot Fasteners	Cot Accessories	Powered Cots	Powered Fasteners	Stair Chairs	Unflavored Water	Flavored Water	Powder Pack	Running	Lifestyle	Training	Walking	Baseball	Skateboarding	Hiking & Trail	Boots	Soccer	Tennis	Golf	Lacrosse	Work Shoes	Basketball	Sandals	Casuals	Soft Ball	Endurance	Equipment	Gx	Heritage	Sports Fuel Innovation Betas
+Product
+	Coolers	Cups	Fuel Bar	GTQ	GTQ - Fierce	GTQ - Flow	GTQ - Frost	Gx Bottle	Organic	Energy Chews	Prime Pouch	Protein Powder	Protein Shake	Whey Protein Bar	Soccer Formula	Blender Bottle	Squeeze Bottles	Tent	Towel	S3	GoBed II	Electric & Manual	Psych	InTouch	Epic II 	Bari 10A Bariatric Bed	LD304 Birthing Bed	Spirit Plus Low Bed	Spirit Select Low Bed	ProForm	Comfort Gel	IsoFlex LAL	PositionPRO	TruRize	Michael Graves with Stryker Bedside Cabinet	Michael Graves with Stryker Bedside Stand	Michael Graves with Stryker Overbed Table	Michael Graves with Stryker Patient Chair	Bedside Stand	Tru-Fit Overbed Table	Symmetry Plus Patient Room Recliner	Symmetry Plus Treatment Recliner	Symmetry II Recliner Bed	Symmetry II Sleepers	Bariatric Chair	SpareChair	Nara Bassinet	Drop-Leaf Table	Delivery Cart	Monitor Cart	Bassinet	SPR-Plus	SofCare Overlay	DuoGard	Universal Heel Boot	The Elite Heel Boot	SofCare Bariatric Chair Cushion	SofCare Chair Cushion	Prime Serie Stretchers	Prime X Stretcher	Prime TC Transport Chair	Cub Pediatric Crib	Gynnie OB/GYM Stretcher	Fluoroscopy Stretcher	Eye Surgery Stretcher	Surgistool Surgical Seating	Eye Stretcher Chair	Stretcher chair	Altrix Precision Temperature Management System	Mistral-Air Forced Air Warming System	T/Pump Localized Therapy	Rapr.Rounds Hyper/Hypothermia Wraps	IsoFlex SE Support Surface	ComfortGel SE Support Surface	Ultra Comfort SE	SofCare Stretcher Overlay	Power-Pro XT	Power-LOAD	X-retraints	XPS siderails	SMRT Battery Kit	Knee-gatch	Steer-lock	Performance-LOAD	Performance-PRO XT	Evacuation Chair	Transfer Flat	Stair-PRO	Power-PRO IT	MX-PRO Bariatric Transport	MX-PRO R3	Floor or Wall Mounts	Berry	Black Cherry	Blueberry Pomegranate	Cranberry Lime	Grape	Mandarin Orange	Kiwi Strawberry	Peach	Lemon	Fresh Foam	Vazee	574	990	247	775	SD 100	Gatorlytes	Carb Energy Chews	Endurance Formula	Carb Energy Drink	Sports Fuel Drink	G2	GTQ - Nuestro Sabor	GTQ - Powder	Post-Game Protein	Sports Re-fuel Drink	Gx Pods
+Product Subtype
+	LAZR	ZANTE	1080	Pace	Rush	Breathe	Reflective	Jetsetter	Synthetic
+Product Size
+	12oz	16.9oz	18.3oz	20oz	21oz	22.4oz	24oz	28oz	32oz	51oz	64oz	76.5oz	128oz	5-Pack	8-Pack	Individual Packet	Chews	1 Gallon	3 Gallon	7 Gallon	Ice Chest
+Sport
+	Baseball	Basketball	Cross Country	Football	Hockey	Lacrosse	NASCAR	Soccer	Tennis	Track	Workout	Yoga/Pilates	Bootcamp	Spin	Boxing	Dance	Running	Training	Golf	Skateboarding	Softball
+Person
+	Bryce Harper	Cam Newton	Coach	D’Angelo Russell	Dwyane Wade	Elena Delle Donne	Eli Manning	Jimmie Johnson	JJ Watt	Joe Athlete	Karl-Anthony Towns	Paul George	Peyton Manning	Serena Williams	Todd Gurley	Trainer	Usain Bolt	EMT	Paramedic	Nurse	Caregiver	Patient	C-Suite	Doctor	Child	Baby	Nicole Winhoffer	Sweat Chicago	Fitness in the City	Tone House	Emily Hutchins	Fit36	Fast Twitch	ModelFIT	Prevail Boxing	Speedplay	The Class	Yoga For Bad People	Blogger	Trayvon Bromell	Francisco Lindor	Aaron Ramsey
+Gender
+	Male	Female
+Number of People
+	None	One	Two	Group of People (3+)
+Campaign
+	Efficacy	Flow	Social	Volume Driving	Beat the Heat	eComm	Sweat with the Best	More Power to You	The Pressure's Off	Pandora	Co:Labs NY 16	Co:Labs LA 16	Co:Labs First Look 17	Co:Labs Miami 17	Co:Labs Denver 17	Co:Labs NY 17	Co:Labs Chicago 17	Co:Labs LA 17	Co:Labs Fitness Festival	Brand Campaign	LAZR Launch	Fresh Foam Zante Launch	Win from Within	Gatorade Brand	Sports Fuel Innovation	Gx	League of Captains	Every Ounce Counts	G Organic	GSSI	Be Like Mike
+Year
+	2006	2007	2008	2009	2010	2011	2012	2013	2014	2015	2016	2017
+Platform Rights
+	Digital	Social	Broadcast	Unlimited	Print	Internal
+Job ID
+	Product	Lifestyle	Active	Studio	Head to Toe	Product Close Up	Medium Shot	Portrait	Wide Shot	Side	Top	Bottom	3/4 view	Front	Back	Right shoe	Left shoe	Action	Family	Group	Consumption	Sweep	Architecture	Pack Shot
+Market
+	North America	International	USA	EMEA	Australia	France	Germany	Asia	Europe	Latin America	Oceania	Africa	Middle East
+Team Marks
+	Game
+	Practice
+Asset Status
+	Expired
+Product Gender
+	Male	Female	Unisex
