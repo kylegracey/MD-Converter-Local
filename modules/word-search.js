@@ -20,6 +20,9 @@ module.exports = function wordSearch(objInput, objOutput, KeywordCats){
     "Product" : {
       "Blender Bottle" : ["Shaker Bottle", "Rec Bottle"],
       "Whey Protein Bar" : ["Recover Bar"]
+    },
+    "Asset Subtype" : {
+      "Backgrounds & Textures" : ["Backgrounds"]
     }
   };
 
